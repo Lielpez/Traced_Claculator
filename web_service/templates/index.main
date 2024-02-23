@@ -1,1 +1,38 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/index.css">
+    <title>Microservice Calculator</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Microservice Calculator</h1>
+        <div class="card p-4">
+            <form method="post">
+                <div class="form-group">
+                    <label for="num1">Number 1:</label>
+                    <input type="number" class="form-control" id="num1" name="num1" required>
+                </div>
+                <div class="form-group">
+                    <label for="num2">Number 2:</label>
+                    <input type="number" class="form-control" id="num2" name="num2" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+            
+            {% if add_result and multiply_result %}
+            <div class="mt-4 mx-auto text-center">
+                <h2>Results:</h2>
+                <p>Addition Result: {{ add_result }}</p>
+                <p>Multiplication Result: {{ multiply_result }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
